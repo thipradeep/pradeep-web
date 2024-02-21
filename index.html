@@ -11,10 +11,15 @@
         <h1>PDF Resizer</h1>
     </header>
     <main>
-        <input type="file" id="fileInput">
+        <label for="fileInput" class="fileInputLabel">
+            <i class="fas fa-cloud-upload-alt"></i> Choose PDF Files
+        </label>
+        <input type="file" id="fileInput" multiple>
         <button onclick="resizePDF()">Resize PDF</button>
         <progress value="0" max="100" id="progressBar"></progress>
+        <div id="previewContainer"></div>
     </main>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
