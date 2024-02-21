@@ -23,11 +23,10 @@ function resizePDF() {
             xhr.onload = function() {
                 if (xhr.status === 200) {
                     var resizedPDFUrl = xhr.responseText;
-                    var previewElement = document.createElement('embed');
-                    previewElement.setAttribute('src', resizedPDFUrl);
-                    previewElement.setAttribute('type', 'application/pdf');
-                    previewElement.setAttribute('width', '100%');
-                    previewElement.setAttribute('height', '500px');
+                    var previewElement = document.createElement('a');
+                    previewElement.setAttribute('href', resizedPDFUrl);
+                    previewElement.setAttribute('download', 'resized_pdf_' + i + '.pdf');
+                    previewElement.innerHTML = '<i class="fas fa-download"></i> Download Resized PDF';
                     previewContainer.appendChild(previewElement);
                 } else {
                     alert('Error resizing PDF. Please try again later.');
